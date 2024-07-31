@@ -1,0 +1,56 @@
+numbers = [1,3,8,35,4,2,3]
+
+seen_numbers = []
+
+for number in numbers:
+    if number in seen_numbers:
+        print('YES')
+    else:
+        print('NO')
+    seen_numbers.append(number)
+
+
+input = input().lower() 
+words = input.split()
+distinctWords = set(words) 
+numberOfA	s = 0 
+for word in distinctWords: 
+numberOfAs += word.count('a') 
+print(len(distinctWords)) 
+print(numberOfAs)
+
+
+list1 = [18, 2, 90, 3, 5]
+list2 = [2, 86, 42, 5, 7]
+
+set1 = set(list1)
+set2 = set(list2)
+
+common_numbers = set1 & set2
+sorted_common_numbers = sorted(common_numbers)
+
+for number in sorted_common_numbers:
+    print(number)
+numPeople = int(input("How many people are there?"))
+
+languagesSpoken = [[] for _ in range(numPeople)]
+
+for i in range(numPeople):
+  numLanguages = int(input(f"(To person {str(i + 1)}) How many languages can you speak?"))
+  print("What languages can you speak in?")
+  for j in range(numLanguages):
+     language = str(input())
+     languagesSpoken[i].append(language)
+
+commonLanguages = set(languagesSpoken[0])
+for languages in languagesSpoken[1:]:
+    commonLanguages.intersection_update(languages)
+
+allLanguages = set()
+for languages in languagesSpoken:
+    allLanguages.update(languages)
+
+print(f"Number of languages everyone speaks: {len(commonLanguages)}")
+print(f"Spoken language(s) everyone speaks: ", ", ".join(commonLanguages))
+print(f"Total languages spoken in the group: {len(allLanguages)}")
+print(f"Languages spoken: ", ", ".join(allLanguages))
